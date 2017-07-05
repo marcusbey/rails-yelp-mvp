@@ -1,0 +1,7 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, input_html: { placeholder: "Le Gourmet" } %>
+  <%= f.input :address, input_html: { placeholder: "123, av du gout 45 235 Montreal" } %>
+  <%= f.input :phone_number, input_html: { placeholder: "512 454 232" } %>
+  <%= f.input :category, as: :select, collection: Animal::CATEGORIES, include_blank:  "Select a category" %>
+  <%= f.submit :add, class: "btn btn-primary" %>
+<% end %>
