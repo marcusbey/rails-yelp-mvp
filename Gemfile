@@ -30,6 +30,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'faker'
 
 
 # Use Redis adapter to run Action Cable in production
@@ -46,7 +47,7 @@ group :development, :test do
   gem 'rspec-rails', group: [ :test ]
   gem 'rails-controller-testing', group: [ :test ]
   gem 'better_errors'
-  gem 'binding_of_caller'
+
 end
 
 group :development do

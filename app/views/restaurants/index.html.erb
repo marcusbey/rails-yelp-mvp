@@ -1,20 +1,21 @@
   <div class="container">
-  <div class="row">
-    <% @restaurants.each do |animal| %>
-      <div class="col-xs-12 col-sm-6">
-        <h3>
-          <%= link_to restaurant.name, restaurant_path(restaurant) %>
-        </h3>
-        <p>
-          <%= restaurant.adress %>
-        </p>
-        <p>
-          <%= restaurant.phone_number %>
-        </p>
-        <p>
-          <%= restaurant.category %>
-        </p>
+    <div class="row">
+      <h1>List of restaurants</h1>
+      <div><%= link_to "Add a new restaurant", new_restaurant_path %></div>
 
+      <% @restaurants.each do |restaurant| %>
+      <% nbr = restaurant.reviews.count %>
+      <div class="col-xs-12 col-sm-6">
+        <h4>
+          <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        </h4>
+        <ul>
+          <li><%= restaurant.adress %></li>
+          <li><%= restaurant.phone_number %></li>
+          <li><%= restaurant.category %></li>
+          <li>(<%= nbr %>) <%= nbr == 1 ? "review": "reviews" %></li>
+        </ul>
+        <p class="options"><%= link_to "Add a review", new_restaurant_review_path(restaurant)%></p>
       </div>
     <% end %>
   </div>
